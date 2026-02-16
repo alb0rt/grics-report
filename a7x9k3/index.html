@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRICS: Grading &amp; Rating In-game Card Strategy</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 2rem auto; max-width: 1100px; background: #f8f9fa; color: #212529; }
+  h1 { margin: 0; font-size: 1.5rem; }
+  .subtitle { color: #6c757d; font-size: 0.85rem; margin-bottom: 1.5rem; }
+  table { border-collapse: collapse; width: 100%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 6px; overflow: hidden; font-size: 0.9rem; }
+  th, td { padding: 8px 12px; text-align: right; white-space: nowrap; }
+  td.player { text-align: left; font-weight: 600; }
+  th { background: #343a40; color: #fff; cursor: pointer; user-select: none; position: relative; }
+  th:hover { background: #495057; }
+  th .arrow { font-size: 0.65rem; margin-left: 3px; opacity: 0.5; }
+  th.asc .arrow::after { content: '\25B2'; opacity: 1; }
+  th.desc .arrow::after { content: '\25BC'; opacity: 1; }
+  tr:nth-child(even) { background: #f8f9fa; }
+  tr:hover { background: #e9ecef; }
+  td.sep { border-left: 2px solid #dee2e6; }
+  th.sep { border-left: 2px solid #6c757d; }
+  .group-header th { padding: 4px 12px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; background: #495057; }
+  [title] { cursor: help; }
+</style>
+</head>
+<body>
+<h1>GRICS: Grading &amp; Rating In-game Card Strategy</h1>
+<p class="subtitle">Generated 2026-02-16 10:57 &middot; 412 total player-game records &middot; spanning 1y 11m</p>
+<table id="t">
+<thead>
+<tr class="group-header">
+  <th colspan="2">Overview</th>
+  <th colspan="1" class="sep">Drafting</th>
+  <th colspan="3" class="sep">Performance vs ELO</th>
+  <th colspan="3" class="sep">Placement vs Draft</th>
+</tr>
+<tr>
+  <th title="Player name" data-type="str">Player<span class="arrow"></span></th>
+  <th title="Number of analyzed games">Games<span class="arrow"></span></th>
+  <th class="sep" title="Mean card quality drafted (avg Elo/Play across cards played)">Draft Skill<span class="arrow"></span></th>
+  <th class="sep" title="Mean actual ELO change per game">Avg ELO<span class="arrow"></span></th>
+  <th title="Mean expected ELO (sum of card Elo/Play values) per game">Avg Expected<span class="arrow"></span></th>
+  <th title="Mean(actual ELO − expected ELO); positive = outperforming hand">ELO vs Draft<span class="arrow"></span></th>
+  <th class="sep" title="Mean placement (1.0 = always 1st, 4.0 = always 4th)">Avg Place<span class="arrow"></span></th>
+  <th title="Percentage of games finishing 1st">Win %<span class="arrow"></span></th>
+  <th title="Mean(placement score − expected); expected derived from pairwise card-quality comparison; positive = outperforming hand">Placement vs Draft<span class="arrow"></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="player">nonsequitr</td><td>20</td>
+  <td class="sep" style="background:rgba(25,135,84,0.093)">0.82</td>
+  <td class="sep">7.70</td><td>7.61</td><td style="background:rgba(25,135,84,0.150)">0.09</td>
+  <td class="sep">2.45</td><td>40.0%</td><td style="background:rgba(25,135,84,0.037)">0.004</td>
+</tr>
+<tr>
+  <td class="player">neenasaur</td><td>39</td>
+  <td class="sep" style="background:rgba(25,135,84,0.040)">0.73</td>
+  <td class="sep">1.69</td><td>6.41</td><td style="background:rgba(220,53,69,0.002)">-4.72</td>
+  <td class="sep">2.77</td><td>12.8%</td><td style="background:rgba(220,53,69,0.035)">-0.073</td>
+</tr>
+<tr>
+  <td class="player">kendred</td><td>92</td>
+  <td class="sep" style="background:rgba(25,135,84,0.150)">0.92</td>
+  <td class="sep">1.20</td><td>8.77</td><td style="background:rgba(220,53,69,0.092)">-7.57</td>
+  <td class="sep">2.02</td><td>39.1%</td><td style="background:rgba(25,135,84,0.116)">0.086</td>
+</tr>
+<tr>
+  <td class="player">skronch</td><td>89</td>
+  <td class="sep" style="background:rgba(25,135,84,0.107)">0.84</td>
+  <td class="sep">0.57</td><td>7.82</td><td style="background:rgba(220,53,69,0.081)">-7.24</td>
+  <td class="sep">2.38</td><td>21.3%</td><td style="background:rgba(25,135,84,0.033)">-0.001</td>
+</tr>
+<tr>
+  <td class="player">erx2</td><td>44</td>
+  <td class="sep" style="background:rgba(25,135,84,0.133)">0.89</td>
+  <td class="sep">0.36</td><td>7.91</td><td style="background:rgba(220,53,69,0.091)">-7.55</td>
+  <td class="sep">2.05</td><td>45.5%</td><td style="background:rgba(25,135,84,0.150)">0.122</td>
+</tr>
+<tr>
+  <td class="player">fallfallin</td><td>48</td>
+  <td class="sep" style="background:rgba(220,53,69,0.090)">0.51</td>
+  <td class="sep">0.00</td><td>4.33</td><td style="background:rgba(25,135,84,0.010)">-4.33</td>
+  <td class="sep">3.27</td><td>6.2%</td><td style="background:rgba(220,53,69,0.150)">-0.193</td>
+</tr>
+<tr>
+  <td class="player">cwang</td><td>80</td>
+  <td class="sep" style="background:rgba(220,53,69,0.150)">0.40</td>
+  <td class="sep">-6.11</td><td>3.30</td><td style="background:rgba(220,53,69,0.150)">-9.42</td>
+  <td class="sep">2.80</td><td>16.2%</td><td style="background:rgba(25,135,84,0.036)">0.002</td>
+</tr>
+</tbody>
+</table>
+<script>
+document.querySelectorAll('#t thead tr:last-child th').forEach((th, i) => {
+  th.addEventListener('click', () => {
+    const tbody = document.querySelector('#t tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    const dir = th.classList.contains('asc') ? 'desc' : 'asc';
+    document.querySelectorAll('#t th').forEach(h => h.classList.remove('asc','desc'));
+    th.classList.add(dir);
+    const isStr = th.dataset.type === 'str';
+    rows.sort((a, b) => {
+      let av = a.children[i].textContent.replace('%','').trim();
+      let bv = b.children[i].textContent.replace('%','').trim();
+      if (!isStr) { av = parseFloat(av); bv = parseFloat(bv); }
+      let cmp = isStr ? av.localeCompare(bv) : av - bv;
+      return dir === 'asc' ? cmp : -cmp;
+    });
+    rows.forEach(r => tbody.appendChild(r));
+  });
+});
+</script>
+</body>
+</html>
